@@ -2,7 +2,7 @@ import React from 'react'
 
 function Form() {
   return (
-    <div>Form</div>
+    <h2>Form</h2>
   )
 }
 

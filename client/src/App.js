@@ -11,7 +11,7 @@ function App() {
     <Container maxWidth='lg'>
       <AppBar position='static' color='inherit'>
         <Typography variant='h2' align='center'>Memories</Typography>
-        <img src={memory} alt='memories' height='300'/>
+        <img src={memory} alt='memories' height='60'/>
       </AppBar>
 
       <Grow in>

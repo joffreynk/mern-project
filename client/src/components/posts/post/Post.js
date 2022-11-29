@@ -2,7 +2,7 @@ import React from 'react'
 
 function Post() {
   return (
-    <div>Post</div>
+    <h2>Post</h2>
   )
 }
 
