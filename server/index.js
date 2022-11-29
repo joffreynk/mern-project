@@ -1,7 +1,9 @@
 import bodyParser from "body-parser";
-import express  from "express";
+import express, { Router }  from "express";
 import cors from 'cors'
 import mongoose from "mongoose";
+
+import routes from './routers/postroutes.js'
 
 const app = express()
 
@@ -11,13 +13,7 @@ app.use(bodyParser.urlencoded({limit: "30mb", extended: true}))
 
 app.use(cors())
 
-
-app.get('/', (req, res) => {
-    res.send({
-        name:"Joffrey",
-        tel:76515792
-    })
-})
+app.use('/posts', routes)
 
 // db connection
 
