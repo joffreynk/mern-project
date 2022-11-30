@@ -1,6 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 
-export default makeStyles(() => ({
+const mystylesStyles =  makeStyles(() => ({
   appBar: {
     borderRadius: 15,
     margin: '30px 0',
@@ -16,3 +16,5 @@ export default makeStyles(() => ({
     marginLeft: '15px',
   },
 }));
+
+export default mystylesStyles

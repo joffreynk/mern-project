@@ -1,14 +1,14 @@
 import React from 'react'
 
-import { Container, Grow, AppBar, Grid, Typography } from '@material-ui/core';
+import { Container, Grow, AppBar, Grid, Typography } from '@mui/material';
 
 import memory from './images/memories.png';
 import Posts from './components/posts/Posts';
 import Form from './components/form/Form';
-import makeStyles from './styles';
+import mystylesStyles from './styles';
 
 function App() {
-  const classes = makeStyles();
+  const classes = mystylesStyles();
   return (
     <Container maxWidth='lg'>
       <AppBar className={classes.appBar} position='static' color='inherit'>
@@ -18,11 +18,11 @@ function App() {
 
       <Grow in>
         <Container>
-          <Grid container justify="space-betwee" alignItems='scretch' spacing={3}>
-            <Grid xs={12} sm={7}>
+          <Grid item container justify="space-betwee" alignItems='scretch' spacing={3}>
+            <Grid item xs={12} sm={7}>
               <Posts />
             </Grid>
-            <Grid xs={12} sm={4}>
+            <Grid item xs={12} sm={4}>
               <Form />
             </Grid>
           </Grid>
