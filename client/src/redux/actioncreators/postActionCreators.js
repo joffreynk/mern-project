@@ -33,7 +33,7 @@ const updatePost = createAsyncThunk(UPDATE_POST, async (params) => {
   return updatedPost.json();
 } )
 
-const getpost = createAsyncThunk(GET_POST, async (param) => {
+const getPost = createAsyncThunk(GET_POST, async (param) => {
   const option = {
     method: 'GET',
     headers: {
@@ -45,7 +45,7 @@ const getpost = createAsyncThunk(GET_POST, async (param) => {
   return getsinglepost.json();
 })
 
-const deletepost = createAsyncThunk(DELETE_POST, async (param) => {
+const deletePost = createAsyncThunk(DELETE_POST, async (param) => {
   const option = {
     method: 'DELETE',
     headers: {
