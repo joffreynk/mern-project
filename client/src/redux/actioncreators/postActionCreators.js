@@ -17,7 +17,13 @@ export const createPost = createAsyncThunk(CREATE_POST, async (params) => {
 })
 
 export const getPosts = createAsyncThunk(GET_POSTS, async () => {
-  const posts = await fetch(URL);
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  };
+  const posts = await fetch(URL, options);
   return posts.json();
 })
 

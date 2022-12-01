@@ -1,35 +1,46 @@
-import React from 'react'
-
-import { Container, Grow, AppBar, Grid, Typography } from '@mui/material';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { CREATE_POST,  GET_POSTS } from '../src/redux/actions/PostActions';
+// import { CREATE_POST, GET_POST, GET_POSTS, DELETE_POST, UPDATE_POST } from '../src/redux/actions/PostActions'
+import { createPost, getPosts } from '../src/redux/actioncreators/postActionCreators'
+import './index.css'
+// import { Container, Grow, AppBar, Grid, Typography } from '@mui/material';
 
 import memory from './images/memories.png';
 import Posts from './components/posts/Posts';
 import Form from './components/form/Form';
-import mystylesStyles from './styles';
 
 function App() {
-  const classes = mystylesStyles();
+
+  const dispatch = useDispatch()
+
+  const data = useSelector((store)=>store.getAllPost)
+  console.log(data);
+  useEffect(()=>{
+    dispatch(getPosts(GET_POSTS))
+  }, [dispatch])
+
   return (
-    <Container maxWidth='lg'>
-      <AppBar className={classes.appBar} position='static' color='inherit'>
-        <Typography className={classes.heading} variant='h2' align='center'>Memories</Typography>
-        <img className={classes.image} src={memory} alt='memories' height='60'/>
-      </AppBar>
+    <div className='lg container'>
+      <div className="d-flex justify-content-center" position='static' color='inherit'>
+        <h2 className=" text-success mx-3" >Memories</h2>
+        <img className="logo mx-3" src={memory} alt='memories' width="50px" height='50px'/>
+      </div>
 
-      <Grow in>
-        <Container>
-          <Grid item container justify="space-betwee" alignItems='scretch' spacing={3}>
-            <Grid item xs={12} sm={7}>
+      <div >
+        <div className='container'>
+          <div className='' >
+            <div className='xs-12 sm-7'>
               <Posts />
-            </Grid>
-            <Grid item xs={12} sm={4}>
+            </div>
+            <div className='xs-12 sm-4'>
               <Form />
-            </Grid>
-          </Grid>
-        </Container>
-      </Grow>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    </Container>
+    </div>
   )
 }
 

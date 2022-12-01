@@ -17,7 +17,7 @@ export const createPostReducer = createSlice({
 })
 
 export const getPostsReducers = createSlice({
-  name: 'allPosts',
+  name: 'getAllPost',
   initialState: {
     loading: false,
     allPosts: [],
