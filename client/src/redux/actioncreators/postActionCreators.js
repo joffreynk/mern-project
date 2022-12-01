@@ -1,10 +1,10 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit'
 
 const URL = 'http://localhost:3001/posts'
 
 import { CREATE_POST, GET_POST, GET_POSTS, DELETE_POST, UPDATE_POST } from "../actions/PostActions";
 
-const createPost = createAsyncThunk(CREATE_POST, async (params) => {
+export const createPost = createAsyncThunk(CREATE_POST, async (params) => {
   const options = {
     method: 'POST',
     headers: {
@@ -15,13 +15,14 @@ const createPost = createAsyncThunk(CREATE_POST, async (params) => {
   const post = await fetch(URL, options);
   return post.json();
 })
-const getPosts = createAsyncThunk(GET_POSTS, async () => {
+
+export const getPosts = createAsyncThunk(GET_POSTS, async () => {
   const posts = await fetch(URL);
   return posts.json();
 })
 
 
-const updatePost = createAsyncThunk(UPDATE_POST, async (params) => {
+export const updatePost = createAsyncThunk(UPDATE_POST, async (params) => {
   const options = {
     method: 'PATCH',
     headers: {
@@ -33,7 +34,7 @@ const updatePost = createAsyncThunk(UPDATE_POST, async (params) => {
   return updatedPost.json();
 } )
 
-const getPost = createAsyncThunk(GET_POST, async (param) => {
+export const getPost = createAsyncThunk(GET_POST, async (param) => {
   const option = {
     method: 'GET',
     headers: {
@@ -45,7 +46,7 @@ const getPost = createAsyncThunk(GET_POST, async (param) => {
   return getsinglepost.json();
 })
 
-const deletePost = createAsyncThunk(DELETE_POST, async (param) => {
+export const deletePost = createAsyncThunk(DELETE_POST, async (param) => {
   const option = {
     method: 'DELETE',
     headers: {
