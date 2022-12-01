@@ -13,6 +13,7 @@ import Form from './components/form/Form';
 function App() {
 
   const dispatch = useDispatch()
+  // dispatch(getPosts(GET_POSTS))
 
   const data = useSelector((store)=>store.getAllPost)
   console.log(data);
