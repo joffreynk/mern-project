@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
+import { CREATE_POST, GET_POST, GET_POSTS, DELETE_POST, UPDATE_POST } from "../actions/PostActions";
 
 const URL = 'http://localhost:3001/posts'
 
-import { CREATE_POST, GET_POST, GET_POSTS, DELETE_POST, UPDATE_POST } from "../actions/PostActions";
 
 export const createPost = createAsyncThunk(CREATE_POST, async (params) => {
   const options = {
@@ -30,8 +30,8 @@ export const updatePost = createAsyncThunk(UPDATE_POST, async (params) => {
     },
     body: JSON.stringify(params),
   };
-  const updatedpost = await fetch(URL, options)
-  return updatedPost.json();
+  const updatedpost = await fetch(URL, options);
+  return updatedpost.json();
 } )
 
 export const getPost = createAsyncThunk(GET_POST, async (param) => {

@@ -2,7 +2,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import { createPostReducer, getPostsReducers, getPostReducer, updatePostReducer, deletePostReducer } from './reducers/postReducers';
 
-const postReducer = combineReducers({
+const reducer = combineReducers({
     createPost: createPostReducer.reducer,
     getSinglePost: getPostReducer.reducer,
     getAllPost: getPostsReducers.reducer,
@@ -10,5 +10,5 @@ const postReducer = combineReducers({
     deletePost: deletePostReducer.reducer,
 });
 
-const store = configureStore({postReducer})
+const store = configureStore({reducer})
 export default store;
