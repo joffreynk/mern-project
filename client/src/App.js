@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { createPost, getPosts } from '../src/redux/actioncreators/postActionCreators'
+import React from 'react'
+
+
 import './index.css'
 
 import memory from './images/memories.png';
@@ -8,17 +8,6 @@ import Posts from './components/posts/Posts';
 import Form from './components/form/Form';
 
 function App() {
-
-  const dispatch = useDispatch()
-  // dispatch(getPosts(GET_POSTS))
-
-  const data = useSelector((store)=>store.getAllPost)
-
-  console.log(data);
-  
-  useEffect(()=>{
-    dispatch(getPosts())
-  }, [dispatch])
 
   return (
     <div className='lg container'>
