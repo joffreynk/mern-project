@@ -12,8 +12,12 @@ export const createPost = createAsyncThunk(CREATE_POST, async (params) => {
     },
     body: JSON.stringify(params),
   };
-  const post = await fetch(URL, options);
-  return post.json();
+  try {
+    const post = await fetch(URL, options);
+    return post.json();
+  } catch (error) {
+    console.log(error.message);
+  }
 })
 
 export const getPosts = createAsyncThunk(GET_POSTS, async () => {
