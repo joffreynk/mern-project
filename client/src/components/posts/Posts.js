@@ -7,7 +7,7 @@ function Posts() {
   const dispatch = useDispatch()
 
   const posts = useSelector((store)=>store.getAllPost)
-  
+  console.log(posts);
   useEffect(()=>{
     dispatch(getPosts())
   }, [dispatch])
