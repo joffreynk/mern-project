@@ -7,7 +7,6 @@ function Form() {
 
   const dispatch = useDispatch();
 
-
   const [postData, setPostData] = useState({
     title:'',
     creator: '',
@@ -15,7 +14,7 @@ function Form() {
     message: '',
     selectedFile: ''
   })
-  // console.log(postData);
+
   const handleSumit = (e)=>{
     e.preventDefault()
     dispatch(createPost(postData));
@@ -31,8 +30,8 @@ function Form() {
       message: '',
       selectedFile: ''
     })
-    console.log('console cleared successfully');
   }
+
   return (
     <>
       <h2>Add data for Post</h2>
@@ -59,7 +58,7 @@ function Form() {
       <div className="mb-3">
         <label htmlFor="creator" className="form-label">memory Picture </label>
         <div className='form-file'>
-        <FileBase type='file' multiple={false} onDone={(base64)=>setPostData({...postData, selectedFile: base64})} />
+        <FileBase type='file' multiple={false} onDone={({base64})=>setPostData({...postData, selectedFile: base64})} />
         </div>
       </div>
       <div className="m-3">

@@ -13,7 +13,9 @@ function App() {
   // dispatch(getPosts(GET_POSTS))
 
   const data = useSelector((store)=>store.getAllPost)
+
   console.log(data);
+  
   useEffect(()=>{
     dispatch(getPosts())
   }, [dispatch])
